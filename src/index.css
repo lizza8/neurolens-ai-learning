@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 270 50% 10%;
+    --foreground: 180 100% 80%;
+    
+    --primary: 180 100% 80%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 180 100% 70%;
+    --primary-active: 180 100% 60%;
+    
+    --secondary: 300 80% 40%;
+    --secondary-foreground: 180 100% 90%;
+    --secondary-hover: 300 80% 50%;
+    --secondary-active: 300 80% 60%;
+    
+    --tertiary: 200 90% 30%;
+    --tertiary-foreground: 180 100% 95%;
+    
+    --accent: 320 100% 55%;
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 260 50% 6%;
+    --muted-foreground: 0 0% 100%;
+    
+    --card: 260 40% 10% / 0.6;
+    --card-foreground: 0 0% 100%;
+    
+    --border: 260 30% 30%;
+    --input: 260 50% 8%;
+    --ring: 180 100% 70%;
+    
+    --success: 150 80% 45%;
+    --success-foreground: 150 100% 95%;
+    
+    --warning: 40 100% 50%;
+    --warning-foreground: 40 100% 95%;
+    
+    --error: 0 90% 50%;
+    --error-foreground: 0 100% 95%;
+    
+    --info: 200 90% 50%;
+    --info-foreground: 200 100% 95%;
+    
+    --neutral-50: 0 0% 98%;
+    --neutral-100: 0 0% 90%;
+    --neutral-200: 0 0% 80%;
+    --neutral-300: 0 0% 60%;
+    --neutral-400: 0 0% 40%;
+    --neutral-500: 0 0% 30%;
+    --neutral-600: 0 0% 20%;
+    --neutral-700: 0 0% 12%;
+    --neutral-800: 270 25% 8%;
+    --neutral-900: 270 30% 5%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html,
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  body {
+    @apply font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .text-glow {
+    text-shadow: 0 0 8px currentColor;
+  }
+  
+  .text-glow-strong {
+    text-shadow: 0 0 16px currentColor, 0 0 32px currentColor;
+  }
+  
+  .neon-border {
+    border: 1px solid hsl(180 100% 60% / 0.3);
+  }
+  
+  .neon-border-strong {
+    border: 1px solid hsl(180 100% 70%);
+  }
+}
+
+@layer components {
+  .markdown-content {
+    @apply text-foreground;
+  }
+  
+  .markdown-content strong {
+    @apply text-primary text-glow font-medium;
+  }
+  
+  .markdown-content h1 {
+    @apply text-h3 font-heading text-foreground mb-4;
+  }
+  
+  .markdown-content h2 {
+    @apply text-h4 font-heading text-foreground mb-3;
+  }
+  
+  .markdown-content h3 {
+    @apply text-body-lg font-heading text-foreground mb-2;
+  }
+  
+  .markdown-content ul {
+    @apply list-disc list-inside space-y-2 ml-4 text-neutral-200;
+  }
+  
+  .markdown-content ol {
+    @apply list-decimal list-inside space-y-2 ml-4 text-neutral-200;
+  }
+  
+  .markdown-content p {
+    @apply mb-4 text-foreground;
+  }
+  
+  .markdown-content code {
+    @apply px-2 py-1 bg-muted/50 rounded text-primary font-mono text-body-sm;
+  }
+  
+  .markdown-content pre {
+    @apply p-4 bg-muted/50 rounded-md overflow-x-auto mb-4;
+  }
+  
+  .markdown-content pre code {
+    @apply p-0 bg-transparent;
+  }
+  
+  .markdown-content a {
+    @apply text-primary hover:text-glow underline;
+  }
+  
+  .markdown-content blockquote {
+    @apply border-l-4 border-primary/50 pl-4 italic text-neutral-300 my-4;
+  }
+}
